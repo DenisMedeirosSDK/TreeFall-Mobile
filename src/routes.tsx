@@ -2,10 +2,10 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import MapSearch from './pages/MapSearch';
-import TreeFallData from './pages/CreateTreeFall/TreeFallData';
-import SelectMapPosition from './pages/CreateTreeFall/SelectMapPosition';
-import TreeFallDetails from './pages/TreeFallDetails';
+import MapSearch from './screens/MapSearch';
+import TreeFallData from './screens/CreateTreeFall/TreeFallData';
+import SelectMapPosition from './screens/CreateTreeFall/SelectMapPosition';
+import TreeFallDetails from './screens/TreeFallDetails';
 import Header from './components/Header';
 
 const { Navigator, Screen } = createStackNavigator();

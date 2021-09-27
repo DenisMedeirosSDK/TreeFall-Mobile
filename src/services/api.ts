@@ -1,6 +1,6 @@
 import axios from 'axios';
 const api = axios.create({
-  baseURL: 'https://tree-fall-be.herokuapp.com',
+  baseURL: 'http://192.168.18.2:3333/',
 });
 
 export default api;
