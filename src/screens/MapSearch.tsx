@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Alert } from 'react-native';
-import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import * as Location from 'expo-location';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
+import * as Location from 'expo-location';
 import { Feather } from '@expo/vector-icons';
 
-import styles from '../styles/pages/mapSearch';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
+import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+
 import api from '../services/api';
+
+import styles from '../styles/pages/mapSearch';
 
 interface ITreeFall {
   id: string;

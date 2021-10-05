@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Dimensions, Text, Alert } from 'react-native';
-
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
-import MapView, { MapEvent, Marker } from 'react-native-maps';
-import * as Location from 'expo-location';
 
-// import mapMarkerImg from '../../images/arvore.png';
+import MapView, { MapEvent, Marker } from 'react-native-maps';
+
+import * as Location from 'expo-location';
 
 export default function SelectMapPosition() {
   const navigation = useNavigation();

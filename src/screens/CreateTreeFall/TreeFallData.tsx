@@ -1,20 +1,20 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   ScrollView,
   View,
   StyleSheet,
-  Switch,
   Text,
   TextInput,
   TouchableOpacity,
   Image,
 } from 'react-native';
-import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation, useRoute } from '@react-navigation/native';
+
+import { Feather } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
+
 import api from '../../services/api';
-// import cep from 'cep-promise';
 
 interface IOrphanageDataRouteParams {
   position: {
@@ -32,18 +32,8 @@ export default function OrphanageData() {
   const [neighborhood, setNeighborhood] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
-  const [country, setCountry] = useState('');
   const [zipcode, setZipcode] = useState('');
   const [images, setImages] = useState<string[]>([]);
-
-  // cep(`${zipcode}`)
-  //   .then(response => {
-  //     setCity(response.city),
-  //       setNeighborhood(response.neighborhood),
-  //       setState(response.state),
-  //       setStreet(response.street);
-  //   })
-  //   .then(console.log);
 
   async function handleCreateTreeFall() {
     const { latitude, longitude } = params.position;
@@ -147,40 +137,6 @@ export default function OrphanageData() {
 
       <Text style={styles.label}>Estado</Text>
       <TextInput style={styles.input} value={state} onChangeText={setState} />
-
-      {/* <Text style={styles.label}>País</Text>
-      <TextInput
-        style={styles.input}
-        value={country}
-        onChangeText={setCountry}
-      /> */}
-
-      {/* <Text style={styles.title}>Suas informações</Text>
-
-      <Text style={styles.label}>Nome</Text>
-      <TextInput
-        style={styles.input}
-        value={instructions}
-        onChangeText={setInstructions}
-      />
-
-      <Text style={styles.label}>Telefone</Text>
-      <TextInput
-        style={styles.input}
-        value={opening_hours}
-        keyboardType="numeric"
-        onChangeText={setOpeningHours}
-      />
-
-      <View style={styles.switchContainer}>
-        <Text style={styles.label}>Permite entrar em contato?</Text>
-        <Switch
-          thumbColor="#fff"
-          trackColor={{ false: '#ccc', true: '#39CC83' }}
-          value={open_on_weekends}
-          onValueChange={setOpenOnWeekends}
-        />
-      </View> */}
 
       <RectButton style={styles.nextButton} onPress={handleCreateTreeFall}>
         <Text style={styles.nextButtonText}>Cadastrar</Text>

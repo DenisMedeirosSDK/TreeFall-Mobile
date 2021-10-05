@@ -9,12 +9,9 @@ import {
   TouchableOpacity,
   Linking,
 } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
-import { Feather, FontAwesome } from '@expo/vector-icons';
-
-//import mapMarkerImg from '../images/map-marker.png';
-import { RectButton } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native';
+import MapView, { Marker } from 'react-native-maps';
+
 import api from '../services/api';
 
 interface ITreeFallDetailsRouteParams {
@@ -115,16 +112,6 @@ export default function TreeFallDetails() {
             <Text style={styles.routesText}>Ver rotas no Google Maps</Text>
           </TouchableOpacity>
         </View>
-
-        {/* <View style={styles.separator} />
-
-        <Text style={styles.title}>Informações de contato</Text>
-        <Text style={styles.name}>Osvaldo josé</Text>
-
-        <RectButton style={styles.contactButton} onPress={() => {}}>
-          <FontAwesome name="whatsapp" size={24} color="#FFF" />
-          <Text style={styles.contactButtonText}>Entrar em contato</Text>
-        </RectButton> */}
       </View>
     </ScrollView>
   );
