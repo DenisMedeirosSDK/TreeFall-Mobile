@@ -27,6 +27,7 @@ interface ITreeFall {
   zipcode: string;
   city: string;
   state: string;
+  eventType: string;
   images: Array<{
     id: string;
     url: string;
@@ -79,9 +80,10 @@ export default function TreeFallDetails() {
 
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{treeFall.street}</Text>
-        <Text style={styles.description}>
-          {treeFall.neighborhood}, {treeFall.city}, {treeFall.state}
-        </Text>
+        <Text style={styles.description}>Bairro:{treeFall.neighborhood}</Text>
+        <Text style={styles.description}>Cidade: {treeFall.city}</Text>
+        <Text style={styles.description}>Estado: {treeFall.state}</Text>
+        <Text style={styles.description}>Tipo: {treeFall.eventType}</Text>
 
         <View style={styles.mapContainer}>
           <MapView

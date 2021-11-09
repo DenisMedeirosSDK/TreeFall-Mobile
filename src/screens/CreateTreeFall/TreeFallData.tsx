@@ -33,6 +33,7 @@ export default function OrphanageData() {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipcode, setZipcode] = useState('');
+  const [eventType, setEventType] = useState('');
   const [images, setImages] = useState<string[]>([]);
 
   async function handleCreateTreeFall() {
@@ -46,6 +47,7 @@ export default function OrphanageData() {
     data.append('state', state);
     data.append('country', 'brasil');
     data.append('zipcode', zipcode);
+    data.append('eventType', eventType);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
 
@@ -137,6 +139,13 @@ export default function OrphanageData() {
 
       <Text style={styles.label}>Estado</Text>
       <TextInput style={styles.input} value={state} onChangeText={setState} />
+
+      <Text style={styles.label}>Tipo do incidente</Text>
+      <TextInput
+        style={styles.input}
+        value={eventType}
+        onChangeText={setEventType}
+      />
 
       <RectButton style={styles.nextButton} onPress={handleCreateTreeFall}>
         <Text style={styles.nextButtonText}>Cadastrar</Text>

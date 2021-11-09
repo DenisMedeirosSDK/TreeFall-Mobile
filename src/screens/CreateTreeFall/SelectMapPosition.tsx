@@ -25,7 +25,7 @@ export default function SelectMapPosition() {
 
   useEffect(() => {
     async function loadPosition() {
-      const { status } = await Location.requestBackgroundPermissionsAsync();
+      const { status } = await Location.requestForegroundPermissionsAsync();
 
       if (status !== 'granted') {
         Alert.alert('Precisamos de sua permissão para obter a localização');
